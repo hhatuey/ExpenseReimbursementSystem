@@ -1,0 +1,1318 @@
+<!doctype html>
+<html class="h-100" lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <style>
+  </style>
+  <title>Hello, world!</title>
+</head>
+
+<body class="h-100">
+
+
+  <!-- ###[TEMPLATE]############################################################################## -->
+  <template id="template">
+
+    <!-- ######[LANDING PAGE]############################################################################ -->
+    <section id="landing" class="d-flex h-100 text-center text-white bg-dark">
+      <style>
+        /* * Globals */
+
+        /* Custom default button */
+        .btn-secondary,
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+          color: #333;
+          text-shadow: none;
+          /* Prevent inheritance from `body` */
+        }
+
+        /* * Base structure */
+
+        body {
+          text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+          box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+        }
+
+        .cover-container {
+          max-width: 42em;
+        }
+
+        /* * Header */
+
+        .nav-masthead .nav-link {
+          padding: .25rem 0;
+          font-weight: 700;
+          color: rgba(255, 255, 255, .5);
+          background-color: transparent;
+          border-bottom: .25rem solid transparent;
+        }
+
+        .nav-masthead .nav-link:hover,
+        .nav-masthead .nav-link:focus {
+          border-bottom-color: rgba(255, 255, 255, .25);
+        }
+
+        .nav-masthead .nav-link+.nav-link {
+          margin-left: 1rem;
+        }
+
+        .nav-masthead .active {
+          color: #fff;
+          border-bottom-color: #fff;
+        }
+      </style>
+      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+          <div>
+            <h3 class="float-md-start mb-0">ERS</h3>
+            <nav class="nav nav-masthead justify-content-center float-md-end">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="#">Contact</a>
+            </nav>
+          </div>
+        </header>
+
+        <main class="px-3">
+          <h1>Expense Reimbursement System</h1>
+          <p class="lead">The Expense Reimbursement System (ERS) will manage the process of reimbursing employees for expenses incurred while on company time.</p>
+          <p class="lead">
+            <button id="btnlogin" class="btn btn-lg btn-secondary fw-bold border-white bg-white">My Account</button>
+            <button id="btnsignup" class="btn btn-lg btn-secondary fw-bold border-white bg-white">New Account</button>
+          </p>
+        </main>
+
+        <footer class="mt-auto text-white-50">
+          <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
+              href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+        </footer>
+      </div>
+    </section>
+
+    <!-- ######[LOGIN PAGE]############################################################################## -->
+    <section id="login" class="text-center">
+      <style>
+        section {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          padding-top: 40px;
+          padding-bottom: 40px;
+          background-color: #f5f5f5;
+        }
+
+        .form-signin {
+          width: 100%;
+          max-width: 330px;
+          padding: 15px;
+          margin: auto;
+        }
+
+        .form-signin .checkbox {
+          font-weight: 400;
+        }
+
+        .form-signin .form-floating:focus-within {
+          z-index: 2;
+        }
+
+        .form-signin input[type="email"] {
+          margin-bottom: -1px;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+          margin-bottom: 10px;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+        }
+      </style>
+      <main class="form-signin">
+        <form>
+          <img class="mb-4" src="login-logo.jpg" alt="" width="72" height="57">
+          <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+          <div class="alert alert-danger d-none" role="alert">
+            The entered information was not found
+          </div>
+          <div class="form-floating">
+            <input id="floatingInput" class="form-control" name="email" type="email" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input id="floatingPassword" class="form-control" name="password" type="password" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          <button id="btnsignin" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+          <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+        </form>
+      </main>
+    </section>
+
+    <!-- ######[HOMEBOARD PAGE]########################################################################## -->
+    <section id="homeboard">
+      <style>
+        html,
+        body {
+          overflow-x: hidden;
+          /* Prevent scroll on narrow devices */
+        }
+
+        body {
+          padding-top: 56px;
+        }
+
+        @media (max-width: 991.98px) {
+          .offcanvas-collapse {
+            position: fixed;
+            top: 56px;
+            /* Height of navbar */
+            bottom: 0;
+            left: 100%;
+            width: 100%;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            overflow-y: auto;
+            visibility: hidden;
+            background-color: #343a40;
+            transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+          }
+
+          .offcanvas-collapse.open {
+            visibility: visible;
+            transform: translateX(-100%);
+          }
+        }
+
+        .nav-scroller {
+          position: relative;
+          z-index: 2;
+          height: 2.75rem;
+          overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+          display: flex;
+          flex-wrap: nowrap;
+          padding-bottom: 1rem;
+          margin-top: -1px;
+          overflow-x: auto;
+          color: rgba(255, 255, 255, .75);
+          text-align: center;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-underline .nav-link {
+          padding-top: .75rem;
+          padding-bottom: .75rem;
+          font-size: .875rem;
+          color: #6c757d;
+        }
+
+        .nav-underline .nav-link:hover {
+          color: #007bff;
+        }
+
+        .nav-underline .active {
+          font-weight: 500;
+          color: #343a40;
+        }
+
+        .text-white-50 {
+          color: rgba(255, 255, 255, .5);
+        }
+
+        .bg-purple {
+          background-color: #6f42c1;
+        }
+      </style>
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Offcanvas navbar</a>
+          <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a id="logout" class="nav-link" href="#">Switch account</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <main class="container">
+        <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+          <img class="me-3" src="reimbursement.png" alt="" width="48" height="48">
+          <div class="lh-1">
+            <h1 class="h6 mb-0 text-white lh-1">Reimbursement</h1>
+            <small>Expenses</small>
+          </div>
+        </div>
+
+        <!-- //////////[PENDING]\\\\\\\\\\\ -->
+        <div id="pending" class="my-3 p-3 bg-body rounded shadow-sm">
+          <small class="d-block text-end mt-3">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">New Ticket</a>
+          </small>
+          <h6 class="border-bottom pb-2 mb-0">Pending</h6>
+          <div id="expenses">
+            <div class="item d-flex text-muted pt-3">
+              <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
+                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+                preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="gold" />
+              </svg>
+              <p class="pb-3 mb-0 small lh-sm border-bottom">
+                <strong class="d-block text-gray-dark">LODGING</strong>
+              </p>
+              <div id="date" class="small ms-auto">11/27/1981</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- //////////[RESOLVED]\\\\\\\\\\\ -->
+        <div id="resolved" class="my-3 p-3 bg-body rounded shadow-sm">
+          <small class="d-block text-end mt-3">
+          </small>
+          <h6 class="border-bottom pb-2 mb-0">Resolved</h6>
+          <div id="expenses-r">
+            <div class="item-r d-flex text-muted pt-3">
+              <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
+                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+                preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="gold" />
+              </svg>
+
+              <div class="d-flex justify-content-between pb-3 mb-0 small lh-sm border-bottom w-100 ">
+                <div class="">
+                  <strong class="text-gray-dark">FOOD</strong>
+                  <span id="user" class="d-block">@username</span>
+                  <p>Description</p>
+                </div>
+                <div>
+                  <div id="r-date" class="small text-end">11/27/1981</div>
+                  <a id="resolver" href="#">resolver</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </main>
+
+
+      <!-- ////////////[NEW TICKET MODAL]\\\\\\\\\\\\\ -->
+      <div class="modal fade" id="myModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New Expense</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="input-group mb-3">
+                  <label class="input-group-text" for="inputGroupSelect01">Type</label>
+                  <select class="form-select" id="inputGroupSelect01" name="typeID">
+                    <option selected>Choose...</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">Description:</label>
+                  <textarea class="form-control" id="message-text" name="description"></textarea>
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">$</span>
+                  <input id="amount" type="text" class="form-control" name="ammount"
+                    aria-label="Amount (to the nearest dollar)">
+                  <span class="input-group-text">0.00</span>
+                </div>
+                <div id="nan" class="alert alert-danger d-none" role="alert">
+                  Invalid or Empty type of data! Verify and try again.
+                </div>
+                <div id="error" class="alert alert-danger d-none" role="alert">
+                  Something went wrong! Sorry by the inconvinience.
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button id="btnclose" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button id="btnsave" type="button" class="btn btn-primary">Send message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ######[MANAGERBOARD PAGE]########################################################################## -->
+    <section id="managerboard">
+      <style>
+        html,
+        body {
+          overflow-x: hidden;
+          /* Prevent scroll on narrow devices */
+        }
+
+        body {
+          padding-top: 56px;
+        }
+
+        @media (max-width: 991.98px) {
+          .offcanvas-collapse {
+            position: fixed;
+            top: 56px;
+            /* Height of navbar */
+            bottom: 0;
+            left: 100%;
+            width: 100%;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            overflow-y: auto;
+            visibility: hidden;
+            background-color: #343a40;
+            transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+          }
+
+          .offcanvas-collapse.open {
+            visibility: visible;
+            transform: translateX(-100%);
+          }
+        }
+
+        .nav-scroller {
+          position: relative;
+          z-index: 2;
+          height: 2.75rem;
+          overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+          display: flex;
+          flex-wrap: nowrap;
+          padding-bottom: 1rem;
+          margin-top: -1px;
+          overflow-x: auto;
+          color: rgba(255, 255, 255, .75);
+          text-align: center;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-underline .nav-link {
+          padding-top: .75rem;
+          padding-bottom: .75rem;
+          font-size: .875rem;
+          color: #6c757d;
+        }
+
+        .nav-underline .nav-link:hover {
+          color: #007bff;
+        }
+
+        .nav-underline .active {
+          font-weight: 500;
+          color: #343a40;
+        }
+
+        .text-white-50 {
+          color: rgba(255, 255, 255, .5);
+        }
+
+        .bg-purple {
+          background-color: #6f42c1;
+        }
+      </style>
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Offcanvas navbar</a>
+          <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a id="logout" class="nav-link" href="#">Switch account</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- /////////////////////[TABULATOR]\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="reimb-tab" data-bs-toggle="tab" data-bs-target="#reimb" type="button"
+            role="tab" aria-controls="Reimbursements" aria-selected="true">Reimbursements</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="emp-tab" data-bs-toggle="tab" data-bs-target="#emp" type="button" role="tab"
+            aria-controls="Employees" aria-selected="false">Employees</button>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="reimb" role="tabpanel" aria-labelledby="reimb-tab">
+          <main class="container">
+            <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+              <img class="me-3" src="reimbursement.png" alt="" width="48" height="48">
+              <div class="lh-1">
+                <h1 class="h6 mb-0 text-white lh-1">Reimbursement</h1>
+                <small>Expenses</small>
+              </div>
+            </div>
+
+            <!-- //////////[PENDING]\\\\\\\\\\\ -->
+            <div id="pendings" class="my-3 p-3 bg-body rounded shadow-sm">
+              <small class="d-block text-end mt-3">
+              </small>
+              <h6 class="border-bottom pb-2 mb-0">Pending</h6>
+              <div id="expenses-p">
+                <div class="item-p d-flex text-muted pt-3">
+                  <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="gold" />
+                  </svg>
+                  <div class="d-flex justify-content-between pb-3 mb-0 small lh-sm border-bottom w-100 ">
+                    <p class="pb-3 mb-0 lh-sm ">
+                      <strong class="d-block text-gray-dark">TRAVEL</strong>
+                    </p>
+                    <div>
+                      <div id="s-date" class="small text-end">11/27/1981</div>
+                      <a id="author" class="d-block" href="#">author</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- //////////[RESOLVED]\\\\\\\\\\\-->
+            <div id="resolved" class="my-3 p-3 bg-body rounded shadow-sm">
+              <h6 class="border-bottom pb-2 mb-0">Resolved</h6>
+              <div id="expenses-r">
+                <div class="item-r d-flex text-muted pt-3">
+                  <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="green" />
+                  </svg>
+
+                  <div class="d-flex justify-content-between pb-3 mb-0 small lh-sm border-bottom w-100 ">
+                    <div class="">
+                      <strong class="text-gray-dark">FOOD</strong>
+                      <span id="user" class="d-block">@username</span>
+                      <p>Description</p>
+                    </div>
+                    <div>
+                      <div id="r-date" class="small text-end">11/27/1981</div>
+                      <a id="resolver" href="#">resolver</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+
+        </div>
+        <div class="tab-pane fade" id="emp" role="tabpanel" aria-labelledby="emp-tab">
+          <main class="container">
+            <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+              <img class="me-3" src="employees.png" alt="" width="56" height="48">
+              <div class="lh-1">
+                <h1 class="h6 mb-0 text-white lh-1">Employees</h1>
+                <small>Expenses</small>
+              </div>
+            </div>
+
+            <!-- //////////[LIST OF EMPLOYEES]\\\\\\\\\\\ -->
+            <div id="employees" class="my-3 p-3 bg-body rounded shadow-sm">
+              <small class="d-block text-end mt-3">
+              </small>
+              <div id="list">
+                <div class="item-e d-flex text-muted pt-3">
+                  <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="blue" />
+                  </svg>
+                  <div class="d-flex justify-content-between pb-3 mb-0 small lh-sm border-bottom w-100 ">
+                    <p class="pb-3 mb-0 lh-sm ">
+                      <strong class="d-block text-gray-dark">FullName</strong>
+                      <!-- Role here -->
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+
+
+      <div id="emp-expenses"
+        class="w-100 h-100 my-5 p-3 bg-body rounded shadow-sm position-absolute top-50 start-50 translate-middle d-none">
+        <small class="d-block text-end mt-3">
+          <button id="btnclose" type="button" class="btn btn-primary">Close</button>
+        </small>
+        <h6 class="border-bottom pb-2 mb-0">Expenses</h6>
+        <div id="list-expenses">
+          <div class="item-expenses d-flex text-muted pt-3">
+            <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
+              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+              preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="gold" />
+            </svg>
+            <div class="d-flex justify-content-between pb-3 mb-0 small lh-sm border-bottom w-100 ">
+              <p class="pb-3 mb-0 lh-sm ">
+                <strong class="d-block text-gray-dark">TRAVEL</strong>
+              </p>
+              <div>
+                <div id="s-date" class="small text-end">11/27/1981</div>
+                <a id="author" class="d-block" href="#">author</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- //////////////////////[ITEM MODAL]\\\\\\\\\\\\\\\\\\\\\\\ -->
+      <div class="modal fade" id="itmModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalLabel">Change Status</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="card">
+                <div class="card-body">
+                  <div id="s-date" class=" text-end">11/27/1981</div>
+                  <h5 class="card-title">LODGING</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Author</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                  <div id="s-amount" class=" text-end">17.27</div>
+                </div>
+              </div>
+              <div class="container text-center">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="3"
+                    checked>
+                  <label class="form-check-label" for="inlineRadio1">DENIED</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                  <label class="form-check-label" for="inlineRadio2">APPROVED</label>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button id="btnclose" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button id="btnsave" type="button" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ######[ALL EMPLOYEES PAGE]########################################################################## -->
+    <section id="allemployees">
+      <main class="container">
+        <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+          <img class="me-3" src="reimbursement.png" alt="" width="48" height="48">
+          <div class="lh-1">
+            <h1 class="h6 mb-0 text-white lh-1">Reimbursement</h1>
+            <small>Expenses</small>
+          </div>
+        </div>
+
+        <!-- //////////[LIST OF EMPLOYEES]\\\\\\\\\\\ -->
+        <div id="employees" class="my-3 p-3 bg-body rounded shadow-sm">
+          <small class="d-block text-end mt-3">
+            <a id="all" href="#" data-bs-toggle="modal" data-bs-target="#myModal">All Employees</a>
+          </small>
+          <h6 class="border-bottom pb-2 mb-0">Pending</h6>
+          <div id="expenses-p">
+            <div class="item-p d-flex text-muted pt-3">
+              <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
+                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+                preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="gold" />
+              </svg>
+              <div class="d-flex justify-content-between pb-3 mb-0 small lh-sm border-bottom w-100 ">
+                <p class="pb-3 mb-0 lh-sm ">
+                  <strong class="d-block text-gray-dark">TRAVEL</strong>
+                </p>
+                <div>
+                  <div id="s-date" class="small text-end">11/27/1981</div>
+                  <a id="author" class="d-block" href="#">author</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <small class="d-block text-end mt-3">
+            <a href="#">All updates</a>
+          </small>
+        </div>
+      </main>
+    </section>
+
+    <!-- ######[REGISTRATION PAGE]########################################################################## -->
+    <section id="registration" class="bg-light">
+      <div class="container">
+        <main>
+          <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="reg-logo.png" alt="" width="96" height="96">
+            <h2>Registration form</h2>
+            <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form
+              group has a validation state that can be triggered by attempting to submit the form without completing it.
+            </p>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <div class="col-md-7 col-lg-8">
+              <h4 class="mb-3">Billing address</h4>
+              <form class="needs-validation" novalidate>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label for="txtfirstname" class="form-label">First name</label>
+                    <input id="txtfirstname" class="form-control" type="text" name="firstName" placeholder="" value=""
+                      required>
+                    <div class="invalid-feedback">
+                      Valid first name is required.
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <label for="txtlastName" class="form-label">Last name</label>
+                    <input id="txtlastName" class="form-control" type="text" name="lastName" placeholder="" value=""
+                      required>
+                    <div class="invalid-feedback">
+                      Valid last name is required.
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="txtusername" class="form-label">Username</label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text">@</span>
+                      <input id="txtusername" class="form-control" type="text" name="username" placeholder="Username"
+                        required>
+                      <div class="invalid-feedback">
+                        Your username is required.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="txtemail" class="form-label">Email</label>
+                    <input id="txtemail" class="form-control" type="email" name="email" placeholder="you@example.com"
+                      required>
+                    <div class="invalid-feedback">
+                      Please enter a valid email address for shipping updates.
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="txtpassword" class="form-label">Password</label>
+                    <input id="txtpassword" class="form-control" type="password" name="password" placeholder=""
+                      required>
+                    <div class="invalid-feedback">
+                      Please enter a valid password for [shipping updates].
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="txtpassword2" class="form-label">Password <span
+                        class="text-muted">(re-enter)</span></label>
+                    <input id="txtpassword2" class="form-control" type="password" name="" placeholder="" required>
+                    <div class="invalid-feedback">
+                      Please enter the same password as above.
+                    </div>
+                  </div>
+
+                  <div class="bd-example border">
+                    <h6>Role</h6>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="roleID" id="inlineRadio1" value="1" required>
+                      <label class="form-check-label" for="inlineRadio1">Employee</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="roleID" id="inlineRadio2" value="2" required>
+                      <label class="form-check-label" for="inlineRadio2">Manager</label>
+                    </div>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <button id="btnregister" class="w-100 btn btn-primary btn-lg" type="submit">Create Account</button>
+              </form>
+            </div>
+          </div>
+        </main>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+          <p class="mb-1">&copy; 2017–2021 Company Name</p>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+          </ul>
+        </footer>
+      </div>
+    </section>
+  </template>
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"
+    integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha"
+    crossorigin="anonymous"></script>
+
+  <script>
+    window.appStore = {}
+    let currentPage = ''
+    const template = document.getElementById('template')
+
+    // #region HTML sections handlers
+    function PageLayout(layoutName) {
+      const layout = template.content.getElementById(layoutName).cloneNode(true)
+      this.getLayout = () => layout
+
+      this.render = () => {
+        currentPage = layoutName
+        document.body.prepend(layout)
+        if (!history.state || (history.state._id !== this.constructor.name))
+          history.pushState({ _id: this.constructor.name }, 'Landing Page', null)
+      }
+    }
+
+    function Landing() {
+      PageLayout.call(this, 'landing')
+      const landing = this.getLayout()
+      document.title = "Landing Page"
+      validate(landing)
+
+      const btnLogin = landing.querySelector('#btnlogin')
+      btnLogin.addEventListener('click', (event) => {
+        event.preventDefault()
+        new Login().render()
+        landing.remove()
+      })
+
+      const btnSignUp = landing.querySelector('#btnsignup')
+      btnSignUp.addEventListener('click', (event) => {
+        event.preventDefault()
+        new Registration().render()
+        landing.remove()
+      })
+    }
+
+    function Login() {
+      PageLayout.call(this, 'login')
+      const login = this.getLayout()
+      document.title = "Landing Page"
+      validate(login)
+
+      const btnSignIn = login.querySelector('#btnsignin')
+      btnSignIn.addEventListener('click', (event) => {
+        event.preventDefault()
+        let dataForm = new FormData(login.querySelector('form'))
+        let obj = Object.fromEntries(dataForm.entries());
+
+        sendPost('/ers/api/login', obj)
+          .then(data => {
+            if (!data) {
+              login.querySelector('.alert').classList.replace('d-none', 'd-block')
+              return
+            }
+            appStore.user = data
+            if (data.roleType === 'MANAGER') {
+              new ManagerBoard().render()
+            } else {
+              new Homeboard().render()
+            }
+            login.remove()
+          });
+
+      })
+    }
+
+    function Homeboard() {f
+      PageLayout.call(this, 'homeboard')
+      const homeboard = this.getLayout()
+      document.title = "Home Page"
+      let user = appStore.user
+      populate()
+
+      homeboard.querySelector('.navbar-brand').innerHTML = user.firstName + '`s Dashboard'
+
+      let myModal = homeboard.querySelector('#myModal')
+      let select = myModal.querySelector('select')
+      let txtAmount = myModal.querySelector('#amount')
+      let textArea = myModal.querySelector('textarea')
+
+      myModal.querySelector('#btnsave').addEventListener('click', function (event) {
+        event.preventDefault();
+        myModal.querySelector('#nan').classList.replace('d-block', 'd-none')
+        myModal.querySelector('#error').classList.replace('d-block', 'd-none')
+        let amount = Number.parseFloat(txtAmount.value)
+        if (!amount) {
+          myModal.querySelector('#nan').classList.replace('d-none', 'd-block')
+          return;
+        }
+        let obj = {
+          "id": 0,
+          "amount": amount,
+          "submitted": Date.now(),
+          "resolved": null,
+          "description": textArea.value,
+          "receipt": 0,
+          "sign": "",
+          "resolverID": null,
+          "statusID": 1,
+          "authorID": user.id,
+          "typeID": select.selectedIndex
+        }
+        sendPost('/ers/api/save', obj)
+          .then(data => {
+            console.log(data)
+            populate()
+            myModal.querySelector('form').reset()
+            myModal.querySelector('#btnclose').click()
+          }).catch(e => {
+            console.log(e)
+            myModal.querySelector('#error').classList.replace('d-none', 'd-block')
+          })
+      })
+
+      fetch('/ers/api/types')
+        .then(response => response.json())
+        .then(data => {
+          data.map((itm) => {
+            let clone = select.querySelector('option').cloneNode(true)
+            clone.selected = false
+            clone.text = itm.name
+            select.options.add(clone, itm.id)
+          })
+        })
+
+      homeboard.querySelector('#logout').addEventListener('click', function (event) {
+        event.preventDefault();
+        fetch('/ers/api/logout')
+          .then(response => response.json())
+          .then(data => {
+            console.log(data)
+            appStore.user = {};
+            new Login().render()
+            homeboard.remove()
+          })
+      })
+
+      homeboard.querySelector('#navbarSideCollapse').addEventListener('click', function () {
+        homeboard.querySelector('.offcanvas-collapse').classList.toggle('open')
+      })
+      let divPending = homeboard.querySelector('#pending')
+      let divExpenses = divPending.querySelector('#expenses')
+      let divItem = divExpenses.querySelector('.item')
+
+      let divResolved = homeboard.querySelector('#resolved')
+      let divExpensesR = divResolved.querySelector('#expenses-r')
+      let divItemR = divExpensesR.querySelector('.item-r')
+      function populate() {
+        fetch('/ers/api/home?userid=' + user.id)
+          .then(response => response.json())
+          .then(data => {
+            if (!data) {
+              divExpenses.innerHTML = '<p>Nothing to show</p>'
+              return
+            }
+            console.log(data)
+            divExpenses.innerHTML = ''
+            data.filter(item => item.resolved === null).map(itm => {
+              let clone = divItem.cloneNode(true)
+              clone.addEventListener('click', itemHandler)
+              clone.querySelector('strong').innerHTML = itm.type
+              clone.querySelector('p').innerHTML += itm.description
+              clone.querySelector('#date').innerHTML = new Date(itm.submitted).toDateString()
+              divExpenses.append(clone)
+            })
+            divExpensesR.innerHTML = ''
+            data.filter(item => item.resolved !== null).map(itm => {
+              let clone = divItemR.cloneNode(true)
+              let color = itm.status === 'DENIED' ? 'red' : 'green'
+              clone.querySelector('rect').setAttribute('fill', color)
+              // clone.addEventListener('click', itemHandler)
+              clone.querySelector('strong').innerHTML = itm.type
+              clone.querySelector('#user').innerHTML = itm.author
+              clone.querySelector('p').innerHTML = itm.description
+              clone.querySelector('#r-date').innerHTML = new Date(itm.resolved).toDateString()
+              clone.querySelector('#resolver').innerHTML = itm.resolver
+              divExpensesR.append(clone)
+            })
+          })
+      }
+
+      function itemHandler(event) {
+        event.preventDefault()
+      }
+
+    }
+
+    function ManagerBoard() {
+      PageLayout.call(this, 'managerboard')
+      const managerboard = this.getLayout()
+      document.title = "Manager Page"
+      let user = appStore.user
+      populate()
+
+      managerboard.querySelector('.navbar-brand').innerHTML = user.firstName + '`s Dashboard'
+
+      managerboard.querySelector('#logout').addEventListener('click', function (event) {
+        event.preventDefault();
+        fetch('/ers/api/logout')
+          .then(response => response.json())
+          .then(data => {
+            console.log(data)
+            appStore.user = {};
+            new Login().render()
+            managerboard.remove()
+          })
+      })
+
+      managerboard.querySelector('#navbarSideCollapse').addEventListener('click', function () {
+        managerboard.querySelector('.offcanvas-collapse').classList.toggle('open')
+      })
+
+      let divPendings = managerboard.querySelector('#pendings')
+      let divExpensesP = divPendings.querySelector('#expenses-p')
+      let divItemP = divExpensesP.querySelector('.item-p')
+
+      let divResolved = managerboard.querySelector('#resolved')
+      let divExpensesR = divResolved.querySelector('#expenses-r')
+      let divItemR = divExpensesR.querySelector('.item-r')
+
+      function populate() {
+        fetch('/ers/api/manager')
+          .then(response => response.json())
+          .then(data => {
+            if (!data) {
+              divExpenses.innerHTML = '<p>Nothing to show</p>'
+              return
+            }
+            console.log(data)
+            divExpensesP.innerHTML = ''
+            data.filter(item => item.resolved === null).map(itm => {
+              let clone = divItemP.cloneNode(true)
+              clone.setAttribute('id', itm.id)
+              clone.addEventListener('click', itemHandler)
+              clone.querySelector('strong').innerHTML = itm.type
+              clone.querySelector('p').innerHTML += itm.description
+              clone.querySelector('#s-date').innerHTML = new Date(itm.submitted).toDateString()
+              clone.querySelector('#author').innerHTML = itm.author
+              divExpensesP.append(clone)
+            })
+            divExpensesR.innerHTML = ''
+            data.filter(item => item.resolved !== null).map(itm => {
+              let clone = divItemR.cloneNode(true)
+              let color = itm.status === 'DENIED' ? 'red' : 'green'
+              clone.querySelector('rect').setAttribute('fill', color)
+              // clone.addEventListener('click', itemHandler)
+              clone.querySelector('strong').innerHTML = itm.type
+              clone.querySelector('#user').innerHTML = itm.author
+              clone.querySelector('p').innerHTML = itm.description
+              clone.querySelector('#r-date').innerHTML = new Date(itm.resolved).toDateString()
+              clone.querySelector('#resolver').innerHTML = itm.resolver
+              divExpensesR.append(clone)
+            })
+          })
+      }
+
+      let divEmployees = managerboard.querySelector('#employees')
+      let divList = divEmployees.querySelector('#list')
+      let divItemE = divList.querySelector('.item-e')
+
+      function employees() {
+        fetch('/ers/api/employees')
+          .then(response => response.json())
+          .then(data => {
+            console.log(data)
+            divList.innerHTML = ''
+            data.map(itm => {
+              let name = itm.firstName + ' ' + itm.lastName
+              let clone = divItemE.cloneNode(true)
+              clone.setAttribute('id', itm.id)
+              clone.setAttribute('data-name', name)
+              clone.addEventListener('click', oneHandler)
+              clone.querySelector('strong').innerHTML = name
+              clone.querySelector('p').innerHTML += itm.roleType
+              divList.append(clone)
+            })
+          })
+      }
+      employees()
+      let empExpenses = managerboard.querySelector('#emp-expenses')
+      let list = empExpenses.querySelector('#list-expenses')
+      empExpenses.querySelector('#btnclose').addEventListener('click', function(event) {
+        event.preventDefault()        
+        empExpenses.classList.replace('d-block', 'd-none')
+      })
+      function oneHandler(event) {
+        event.preventDefault()
+        let name = event.currentTarget.getAttribute('data-name')
+        let item = list.querySelector('.item-expenses')
+        fetch('/ers/api/ticketbyname?field=author&name=' + name)
+          .then(response => response.json())
+          .then(data => {
+              console.log(data)
+              // list.innerHTML = ''
+              if(data) {
+                data.map(itm => {
+              let clone = item.cloneNode(true)              
+              clone.querySelector('strong').innerHTML = itm.type
+              clone.querySelector('p').innerHTML += itm.description
+              clone.querySelector('#s-date').innerHTML = new Date(itm.submitted).toDateString()
+              clone.querySelector('#author').innerHTML = itm.resolver
+              list.append(clone)
+            })
+              }
+
+            empExpenses.classList.replace('d-none', 'd-block')
+          })
+
+        // fetch('/ers/api/ticket?field=reimb_author&id=' + event.currentTarget.id)
+        //   .then(response => response.json())
+        //   .then(data => {
+        //     console.log(data)
+        //   })
+      }
+
+      let itmModal = managerboard.querySelector('#itmModal')
+      itmModal.querySelector('#btnsave').addEventListener('click', function (event) {
+        let radioValue = itmModal.querySelector('input[name="inlineRadioOptions"]:checked').value
+        let obj = {
+          id: itmModal.getAttribute('data-item-id'),
+          resolved: Date.now(),
+          resolver: appStore.user.id,
+          status: radioValue
+        }
+        sendPost('/ers/api/update', obj).then(data => {
+          console.log(data)
+          itmModal.querySelector('#btnclose').click()
+          populate()
+        })
+      })
+
+      async function itemHandler(event) {
+        event.preventDefault()
+        event.stopPropagation()
+        console.log(event.currentTarget.id)
+        let res = await fetch('/ers/api/ticket?field=reimb_id&id=' + event.currentTarget.id)
+        let data = await res.json()
+        itmModal.querySelector('#s-date').innerHTML = new Date(data[0].submitted).toDateString()
+        itmModal.querySelector('.card-title').innerHTML = data[0].type
+        itmModal.querySelector('.card-subtitle').innerHTML = 'by ' + data[0].author
+        itmModal.querySelector('.card-text').innerHTML = data[0].description
+        itmModal.querySelector('#s-amount').innerHTML = data[0].amount
+        itmModal.setAttribute('data-item-id', data[0].id);
+        new bootstrap.Modal(itmModal).show()
+      }
+    }
+
+    function Registration() {
+      PageLayout.call(this, 'registration')
+      const registration = this.getLayout()
+      document.title = "Registration Page"
+
+      const btnRegister = registration.querySelector('#btnregister')
+      btnRegister.addEventListener('click', function (event) {
+        event.preventDefault()
+        validate(registration)
+        let form = registration.querySelector('form')
+        if (!form.checkValidity()) return
+        const data = new FormData(form)
+        const obj = Object.fromEntries(data.entries())
+        console.log(obj)
+        sendPost('/ers/api/register', obj)
+          .then(data => {
+            if (!data) return
+            console.log(data)
+            new Login().render()
+            registration.remove()
+          })
+        // if (send(obj)) {
+        //   new Login().render()
+        //   registration.remove()
+        // }
+      })
+
+      // async function send(d) {
+      //   let req = await fetch('/ers/api/create', {
+      //     method: 'POST',
+      //     headers: { 'Content-Type': 'application/json' },
+      //     body: JSON.stringify(d)
+      //   })
+      //   let res = await req.json();
+      //   console.log(res)
+      //   return res
+      // }
+
+      // const txtUserName = registration.querySelector('#txtusername')
+      // txtUserName.addEventListener('blur', (event) => {
+      //   event.preventDefault()
+      //   // console.log('onblur')
+      //   let jsonString = JSON.stringify({ userName: event.target.value })
+      //   fetch('checkuser', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //       'Accept': 'application/json'
+      //     },
+      //     body: jsonString
+      //   }).then(response => response.json())
+      //     .then(data => { console.log(JSON.stringify(data)) })
+      // })
+
+      // const txtEmail = registration.querySelector('#txtemail')
+      // txtEmail.addEventListener('blur', (event) => {
+      //   event.preventDefault()
+      //   let jsonString = JSON.stringify({ email: event.target.value })
+      //   fetch('checkEmail', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //       'Accept': 'application/json'
+      //     },
+      //     body: jsonString
+      //   }).then(response => response.json())
+      //     .then((data) => { console.log(JSON.stringify(data)) })
+      // })
+
+      // const btnRegister = registration.querySelector('#btnregister')
+      // btnRegister.addEventListener('click', (event) => {
+      //   event.preventDefault()
+      //   //Get data from the form
+      //   const data = new FormData(registration.querySelector('form'))
+      //   //Convert the data to an object
+
+      //   const jsonData = Object.fromEntries(data.entries())
+      //   //Format the data to JSON string
+      //   // const jsonString = JSON.stringify(jsonData)
+
+      //   //dummy data
+      //   const jsonString = JSON.stringify({
+      //     firstname: 'dell',
+      //     lastname: 'latitude',
+      //     username: 'd630',
+      //     email: 'dell630@dell.com',
+      //     password: 'qwerty',
+      //     password2: 'qwerty',
+      //     address: '1234 Main St',
+      //     address2: '2',
+      //     country: 'United States',
+      //     state: 'California',
+      //     zip: '559',
+      //     sameaddress: 'on'
+      //   })
+
+      //   fetch('register', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //       'Accept': 'application/json'
+      //     },
+      //     body: jsonString
+      //   }).then(response => response.json())
+      //     .then(data => { console.log(JSON.stringify(data)) })
+      //   // new Homeboard().render()
+      //   // registration.remove()
+      // })
+    }
+
+    addEventListener('load', (event) => {
+      new Landing().render()
+    })
+
+    addEventListener('popstate', (event) => {
+      if (event.state === null) {
+        console.log('This event has not been handle, event state is ', event.state)
+        return
+      }
+      console.log(event.state, currentPage)
+      document.body.children[currentPage].remove()
+      const newPage = new window[event.state._id]()
+      newPage.render()
+    })
+
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    function validate(page) {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = page.querySelectorAll('.needs-validation')
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('click', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+          }, false)
+        })
+    }
+
+    async function sendPost(url, data) {
+      let res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+      })
+      let jsonData = await res.json()
+      return jsonData
+    }
+  </script>
+</body>
+
+</html>
