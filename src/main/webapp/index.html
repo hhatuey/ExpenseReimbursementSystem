@@ -10,8 +10,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <style>
-  </style>
   <title>Hello, world!</title>
 </head>
 
@@ -349,7 +347,7 @@
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text">$</span>
-                  <input id="amount" type="text" class="form-control" name="ammount"
+                  <input id="amount" type="text" class="form-control" name="amount"
                     aria-label="Amount (to the nearest dollar)">
                   <span class="input-group-text">0.00</span>
                 </div>
@@ -357,7 +355,7 @@
                   Invalid or Empty type of data! Verify and try again.
                 </div>
                 <div id="error" class="alert alert-danger d-none" role="alert">
-                  Something went wrong! Sorry by the inconvinience.
+                  Something went wrong! Sorry by the inconvenience.
                 </div>
               </form>
             </div>
@@ -755,14 +753,14 @@
                     <input id="txtpassword" class="form-control" type="password" name="password" placeholder=""
                       required>
                     <div class="invalid-feedback">
-                      Please enter a valid password for [shipping updates].
+                      Please enter a valid password.
                     </div>
                   </div>
 
                   <div class="col-12">
                     <label for="txtpassword2" class="form-label">Password <span
                         class="text-muted">(re-enter)</span></label>
-                    <input id="txtpassword2" class="form-control" type="password" name="" placeholder="" required>
+                    <input id="txtpassword2" class="form-control" type="password" name="password" placeholder="" required>
                     <div class="invalid-feedback">
                       Please enter the same password as above.
                     </div>
@@ -878,7 +876,7 @@
       })
     }
 
-    function Homeboard() {f
+    function Homeboard() {
       PageLayout.call(this, 'homeboard')
       const homeboard = this.getLayout()
       document.title = "Home Page"
@@ -1119,12 +1117,6 @@
 
             empExpenses.classList.replace('d-none', 'd-block')
           })
-
-        // fetch('/ers/api/ticket?field=reimb_author&id=' + event.currentTarget.id)
-        //   .then(response => response.json())
-        //   .then(data => {
-        //     console.log(data)
-        //   })
       }
 
       let itmModal = managerboard.querySelector('#itmModal')
@@ -1180,93 +1172,7 @@
             new Login().render()
             registration.remove()
           })
-        // if (send(obj)) {
-        //   new Login().render()
-        //   registration.remove()
-        // }
       })
-
-      // async function send(d) {
-      //   let req = await fetch('/ers/api/create', {
-      //     method: 'POST',
-      //     headers: { 'Content-Type': 'application/json' },
-      //     body: JSON.stringify(d)
-      //   })
-      //   let res = await req.json();
-      //   console.log(res)
-      //   return res
-      // }
-
-      // const txtUserName = registration.querySelector('#txtusername')
-      // txtUserName.addEventListener('blur', (event) => {
-      //   event.preventDefault()
-      //   // console.log('onblur')
-      //   let jsonString = JSON.stringify({ userName: event.target.value })
-      //   fetch('checkuser', {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //       'Accept': 'application/json'
-      //     },
-      //     body: jsonString
-      //   }).then(response => response.json())
-      //     .then(data => { console.log(JSON.stringify(data)) })
-      // })
-
-      // const txtEmail = registration.querySelector('#txtemail')
-      // txtEmail.addEventListener('blur', (event) => {
-      //   event.preventDefault()
-      //   let jsonString = JSON.stringify({ email: event.target.value })
-      //   fetch('checkEmail', {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //       'Accept': 'application/json'
-      //     },
-      //     body: jsonString
-      //   }).then(response => response.json())
-      //     .then((data) => { console.log(JSON.stringify(data)) })
-      // })
-
-      // const btnRegister = registration.querySelector('#btnregister')
-      // btnRegister.addEventListener('click', (event) => {
-      //   event.preventDefault()
-      //   //Get data from the form
-      //   const data = new FormData(registration.querySelector('form'))
-      //   //Convert the data to an object
-
-      //   const jsonData = Object.fromEntries(data.entries())
-      //   //Format the data to JSON string
-      //   // const jsonString = JSON.stringify(jsonData)
-
-      //   //dummy data
-      //   const jsonString = JSON.stringify({
-      //     firstname: 'dell',
-      //     lastname: 'latitude',
-      //     username: 'd630',
-      //     email: 'dell630@dell.com',
-      //     password: 'qwerty',
-      //     password2: 'qwerty',
-      //     address: '1234 Main St',
-      //     address2: '2',
-      //     country: 'United States',
-      //     state: 'California',
-      //     zip: '559',
-      //     sameaddress: 'on'
-      //   })
-
-      //   fetch('register', {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //       'Accept': 'application/json'
-      //     },
-      //     body: jsonString
-      //   }).then(response => response.json())
-      //     .then(data => { console.log(JSON.stringify(data)) })
-      //   // new Homeboard().render()
-      //   // registration.remove()
-      // })
     }
 
     addEventListener('load', (event) => {
