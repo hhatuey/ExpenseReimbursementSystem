@@ -1,10 +1,8 @@
 package com.app.dbms;
 
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.util.Map;
-import java.util.Properties;
+import com.app.config.EnvironmentConfig;
 
 public class Database {
 	private static Database instance;
@@ -24,9 +22,9 @@ public class Database {
 
 	public Connection getConnection() {
 		try {
-			String url = getProperties().get("url").toString();
-			String username = getProperties().get("username").toString();
-			String password = getProperties().get("password").toString();
+			String url = EnvironmentConfig.getDbUrl();
+			String username = EnvironmentConfig.getDbUsername();
+			String password = EnvironmentConfig.getDbPassword();
 
 			Connection c = DriverManager.getConnection(url, username, password);
 			return c;
@@ -36,15 +34,5 @@ public class Database {
 		return null;
 	}
 
-	public Map<?, ?> getProperties() {
-		try {
-			Properties p = new Properties();
-			InputStream is = getClass().getClassLoader().getResourceAsStream("jdbc.properties");
-			p.load(is);
-			return p;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
+
 }

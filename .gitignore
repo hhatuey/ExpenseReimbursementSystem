@@ -13,3 +13,8 @@ bin/
 .classpath
 .project
 .settings/
+.factorypath
+
+# Environment variables
+.env
+logs/
