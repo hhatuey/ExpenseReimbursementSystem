@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Router Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+    <div class="container">
+        <h1>Router Test Page</h1>
+        <p>Testing the new routing system:</p>
+        <button onclick="router.navigate('/')" class="btn btn-primary me-2">Home</button>
+        <button onclick="router.navigate('/login')" class="btn btn-secondary me-2">Login</button>
+        <button onclick="router.navigate('/dashboard')" class="btn btn-info me-2">Dashboard</button>
+        <button onclick="router.navigate('/manager')" class="btn btn-warning me-2">Manager</button>
+        <button onclick="router.navigate('/invalid')" class="btn btn-danger">404 Test</button>
+        
+        <div class="mt-4">
+            <h3>Current Route: <span id="current-route">/</span></h3>
+        </div>
+    </div>
+
+    <script src="router.js"></script>
+    <script>
+        // Mock pages for testing
+        function TestPage(name) {
+            this.render = () => {
+                document.body.innerHTML = `
+                    <div class="container text-center mt-5">
+                        <h1>${name} Page</h1>
+                        <button onclick="router.navigate('/')" class="btn btn-primary">Back Home</button>
+                    </div>
+                `;
+                document.getElementById('current-route').textContent = window.location.pathname;
+            };
+        }
+        
+        // Add test routes
+        router.addRoute('/', TestPage.bind(null, 'Home'));
+        router.addRoute('/login', TestPage.bind(null, 'Login'));
+        router.addRoute('/dashboard', TestPage.bind(null, 'Dashboard'));
+        router.addRoute('/manager', TestPage.bind(null, 'Manager'));
+        
+        // Add auth guard for dashboard/manager
+        router.addGuard((route) => {
+            if (route.path === '/dashboard' || route.path === '/manager') {
+                console.log('AuthGuard: Checking access to', route.path);
+                return true; // Allow for testing
+            }
+            return true;
+        });
+    </script>
+</body>
+</html>

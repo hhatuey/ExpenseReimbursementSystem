@@ -1,0 +1,470 @@
+/* ===================================
+   ERS Custom Styles
+   =================================== */
+
+/* Landing Page Styles */
+.ers-landing {
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  color: white;
+  background-color: #212529;
+}
+
+[data-bs-theme="dark"] .ers-landing {
+  background-color: #0d1117 !important;
+}
+
+.ers-landing .btn-secondary,
+.ers-landing .btn-secondary:hover,
+.ers-landing .btn-secondary:focus {
+  color: #333;
+  text-shadow: none;
+}
+
+.ers-landing .cover-container {
+  max-width: 42em;
+}
+
+.ers-nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.ers-nav-masthead .nav-link:hover,
+.ers-nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.ers-nav-masthead .nav-link+.nav-link {
+  margin-left: 1rem;
+}
+
+.ers-nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* Login Page Styles */
+.ers-login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.ers-form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.ers-form-signin .checkbox {
+  font-weight: 400;
+}
+
+.ers-form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.ers-form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.ers-form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Dashboard Styles (Shared between Homeboard and Managerboard) */
+.ers-dashboard {
+  overflow-x: hidden;
+  padding-top: 56px;
+}
+
+.ers-nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.ers-nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  color: rgba(255, 255, 255, .75);
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ers-nav-underline .nav-link {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: .875rem;
+  color: #6c757d;
+}
+
+.ers-nav-underline .nav-link:hover {
+  color: #007bff;
+}
+
+.ers-nav-underline .active {
+  font-weight: 500;
+  color: #343a40;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 991.98px) {
+  .ers-offcanvas-collapse {
+    position: fixed;
+    top: 56px;
+    bottom: 0;
+    left: 100%;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    overflow-y: auto;
+    visibility: hidden;
+    background-color: #343a40;
+    transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+  }
+
+  .ers-offcanvas-collapse.open {
+    visibility: visible;
+    transform: translateX(-100%);
+  }
+}
+
+/* Custom Utility Classes */
+.ers-text-white-50 {
+  color: rgba(255, 255, 255, .5);
+}
+
+.ers-bg-purple {
+  background-color: #6f42c1;
+}
+
+/* Registration Page Styles */
+.ers-registration {
+  background-color: #f8f9fa;
+}
+
+/* ===================================
+   Dark Mode Specific Styles
+   =================================== */
+
+[data-bs-theme="dark"] {
+  /* Custom dark theme variables */
+  --bs-body-bg: #121212;
+  --bs-body-color: #e9ecef;
+  --bs-border-color: #495057;
+}
+
+/* Dark mode overrides for custom components */
+[data-bs-theme="dark"] .ers-login {
+  background-color: #1a1a1a;
+}
+
+[data-bs-theme="dark"] .ers-registration {
+  background-color: #1a1a1a;
+}
+
+[data-bs-theme="dark"] .ers-nav-masthead .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+[data-bs-theme="dark"] .ers-nav-masthead .nav-link:hover,
+[data-bs-theme="dark"] .ers-nav-masthead .nav-link:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+[data-bs-theme="dark"] .ers-nav-masthead .active {
+  color: #fff;
+}
+
+/* Dark mode form controls */
+[data-bs-theme="dark"] .form-control {
+  background-color: #2d3748;
+  border-color: #4a5568;
+  color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .form-control:focus {
+  background-color: #2d3748;
+  border-color: #667eea;
+  color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .form-floating > label {
+  color: #a0aec0;
+}
+
+/* Dark mode cards and containers */
+[data-bs-theme="dark"] .bg-body {
+  background-color: #1a1a1a !important;
+  color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Dark mode text colors */
+[data-bs-theme="dark"] .text-muted {
+  color: #a0aec0 !important;
+}
+
+[data-bs-theme="dark"] .text-gray-dark {
+  color: #e9ecef !important;
+}
+
+/* Dark mode modals */
+[data-bs-theme="dark"] .modal-content {
+  background-color: #1a1a1a;
+  border-color: #495057;
+}
+
+[data-bs-theme="dark"] .modal-header {
+  border-bottom-color: #495057;
+}
+
+[data-bs-theme="dark"] .modal-footer {
+  border-top-color: #495057;
+}
+
+/* Dark mode tabs */
+[data-bs-theme="dark"] .nav-tabs .nav-link {
+  color: #a0aec0;
+  border-color: transparent;
+}
+
+[data-bs-theme="dark"] .nav-tabs .nav-link:hover,
+[data-bs-theme="dark"] .nav-tabs .nav-link:focus {
+  color: #e9ecef;
+  border-color: transparent;
+}
+
+[data-bs-theme="dark"] .nav-tabs .nav-link.active {
+  color: #e9ecef;
+  background-color: #1a1a1a;
+  border-color: #495057;
+}
+
+/* Dark mode borders */
+[data-bs-theme="dark"] .border-bottom {
+  border-bottom-color: #495057 !important;
+}
+
+/* Dark mode comprehensive fixes */
+[data-bs-theme="dark"] body {
+  background-color: #121212 !important;
+  color: #e9ecef !important;
+}
+
+[data-bs-theme="dark"] .navbar {
+  background-color: #1a1a1a !important;
+}
+
+[data-bs-theme="dark"] .navbar-dark {
+  background-color: #1a1a1a !important;
+}
+
+[data-bs-theme="dark"] .navbar-toggler {
+  border-color: #495057 !important;
+}
+
+[data-bs-theme="dark"] .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+[data-bs-theme="dark"] .bg-dark {
+  background-color: #1a1a1a !important;
+}
+
+[data-bs-theme="dark"] .container {
+  color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .card {
+  background-color: #1a1a1a !important;
+  color: #e9ecef !important;
+}
+
+[data-bs-theme="dark"] .modal {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-bs-theme="dark"] .input-group-text {
+  background-color: #2d3748 !important;
+  border-color: #4a5568 !important;
+  color: #e9ecef !important;
+}
+
+[data-bs-theme="dark"] .form-select {
+  background-color: #2d3748 !important;
+  border-color: #4a5568 !important;
+  color: #e9ecef !important;
+}
+
+[data-bs-theme="dark"] .form-text {
+  color: #a0aec0 !important;
+}
+
+[data-bs-theme="dark"] .btn-close {
+  filter: invert(1) !important;
+}
+
+[data-bs-theme="dark"] .text-white {
+  color: #e9ecef !important;
+}
+
+[data-bs-theme="dark"] .text-muted {
+  color: #a0aec0 !important;
+}
+
+[data-bs-theme="dark"] .small {
+  color: #a0aec0 !important;
+}
+
+[data-bs-theme="dark"] .lead {
+  color: #e9ecef !important;
+}
+
+[data-bs-theme="dark"] h1, 
+[data-bs-theme="dark"] h2, 
+[data-bs-theme="dark"] h3, 
+[data-bs-theme="dark"] h4, 
+[data-bs-theme="dark"] h5, 
+[data-bs-theme="dark"] h6 {
+  color: #e9ecef !important;
+}
+
+[data-bs-theme="dark"] p {
+  color: #e9ecef !important;
+}
+
+[data-bs-theme="dark"] .d-flex {
+  background-color: inherit !important;
+}
+
+[data-bs-theme="dark"] .shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.7) !important;
+}
+
+[data-bs-theme="dark"] .rounded {
+  background-color: inherit !important;
+}
+
+[data-bs-theme="dark"] .btn-secondary {
+  background-color: #495057 !important;
+  border-color: #6c757d !important;
+  color: #e9ecef !important;
+}
+
+[data-bs-theme="dark"] .btn-secondary:hover {
+  background-color: #5a6268 !important;
+  border-color: #6c757d !important;
+  color: #fff !important;
+}
+
+[data-bs-theme="dark"] .btn-primary {
+  background-color: #0b5ed7 !important;
+  border-color: #0b5ed7 !important;
+}
+
+[data-bs-theme="dark"] .btn-primary:hover {
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
+}
+
+[data-bs-theme="dark"] footer {
+  background-color: #1a1a1a !important;
+  color: #a0aec0 !important;
+}
+
+[data-bs-theme="dark"] a {
+  color: #667eea !important;
+}
+
+[data-bs-theme="dark"] a:hover {
+  color: #7c9eff !important;
+}
+
+/* Additional dark mode fixes */
+[data-bs-theme="dark"] .pt-3,
+[data-bs-theme="dark"] .pb-3,
+[data-bs-theme="dark"] .mb-0,
+[data-bs-theme="dark"] .lh-sm,
+[data-bs-theme="dark"] .border-bottom {
+  background-color: transparent !important;
+  border-color: #495057 !important;
+}
+
+[data-bs-theme="dark"] .d-flex.text-muted.pt-3 {
+  background-color: #1a1a1a !important;
+}
+
+[data-bs-theme="dark"] .d-flex.text-muted.pt-3 strong {
+  color: #e9ecef !important;
+}
+
+[data-bs-theme="dark"] .d-flex.text-muted.pt-3 .small {
+  color: #a0aec0 !important;
+}
+
+[data-bs-theme="dark"] svg {
+  fill: currentColor !important;
+}
+
+[data-bs-theme="dark"] .alert-danger {
+  background-color: #2d1b1b !important;
+  border-color: #842029 !important;
+  color: #ea868f !important;
+}
+
+[data-bs-theme="dark"] .alert {
+  background-color: #1a1a1a !important;
+  border-color: #495057 !important;
+  color: #e9ecef !important;
+}
+
+[data-bs-theme="dark"] .form-check-input {
+  background-color: #2d3748 !important;
+  border-color: #4a5568 !important;
+}
+
+[data-bs-theme="dark"] .form-check-input:checked {
+  background-color: #667eea !important;
+  border-color: #667eea !important;
+}
+
+[data-bs-theme="dark"] .form-check-label {
+  color: #e9ecef !important;
+}
+
+[data-bs-theme="dark"] .invalid-feedback {
+  color: #f8d7da !important;
+}
+
+[data-bs-theme="dark"] .was-validated .form-control:invalid {
+  background-color: #2d1b1b !important;
+  border-color: #dc3545 !important;
+}
+
+[data-bs-theme="dark"] #emp-expenses {
+  background-color: #1a1a1a !important;
+  color: #e9ecef !important;
+}

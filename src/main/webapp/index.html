@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="h-100" lang="en">
+<html class="h-100" lang="en" data-bs-theme="light">
 
 <head>
   <!-- Required meta tags -->
@@ -9,6 +9,9 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- Custom ERS CSS -->
+  <link href="css/styles.css" rel="stylesheet">
 
   <title>Hello, world!</title>
 </head>
@@ -20,62 +23,18 @@
   <template id="template">
 
     <!-- ######[LANDING PAGE]############################################################################ -->
-    <section id="landing" class="d-flex h-100 text-center text-white bg-dark">
-      <style>
-        /* * Globals */
-
-        /* Custom default button */
-        .btn-secondary,
-        .btn-secondary:hover,
-        .btn-secondary:focus {
-          color: #333;
-          text-shadow: none;
-          /* Prevent inheritance from `body` */
-        }
-
-        /* * Base structure */
-
-        body {
-          text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-          box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-        }
-
-        .cover-container {
-          max-width: 42em;
-        }
-
-        /* * Header */
-
-        .nav-masthead .nav-link {
-          padding: .25rem 0;
-          font-weight: 700;
-          color: rgba(255, 255, 255, .5);
-          background-color: transparent;
-          border-bottom: .25rem solid transparent;
-        }
-
-        .nav-masthead .nav-link:hover,
-        .nav-masthead .nav-link:focus {
-          border-bottom-color: rgba(255, 255, 255, .25);
-        }
-
-        .nav-masthead .nav-link+.nav-link {
-          margin-left: 1rem;
-        }
-
-        .nav-masthead .active {
-          color: #fff;
-          border-bottom-color: #fff;
-        }
-      </style>
+    <section id="landing" class="ers-landing">
       <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="mb-auto">
           <div>
             <h3 class="float-md-start mb-0">ERS</h3>
-            <nav class="nav nav-masthead justify-content-center float-md-end">
+            <nav class="nav ers-nav-masthead justify-content-center float-md-end">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
               <a class="nav-link" href="#">Features</a>
               <a class="nav-link" href="#">Contact</a>
+              <button class="nav-link btn btn-link" id="darkModeToggle" title="Toggle dark mode" type="button">
+                🌙
+              </button>
             </nav>
           </div>
         </header>
@@ -89,7 +48,7 @@
           </p>
         </main>
 
-        <footer class="mt-auto text-white-50">
+        <footer class="mt-auto ers-text-white-50">
           <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
               href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
         </footer>
@@ -97,45 +56,8 @@
     </section>
 
     <!-- ######[LOGIN PAGE]############################################################################## -->
-    <section id="login" class="text-center">
-      <style>
-        section {
-          height: 100%;
-          display: flex;
-          align-items: center;
-          padding-top: 40px;
-          padding-bottom: 40px;
-          background-color: #f5f5f5;
-        }
-
-        .form-signin {
-          width: 100%;
-          max-width: 330px;
-          padding: 15px;
-          margin: auto;
-        }
-
-        .form-signin .checkbox {
-          font-weight: 400;
-        }
-
-        .form-signin .form-floating:focus-within {
-          z-index: 2;
-        }
-
-        .form-signin input[type="email"] {
-          margin-bottom: -1px;
-          border-bottom-right-radius: 0;
-          border-bottom-left-radius: 0;
-        }
-
-        .form-signin input[type="password"] {
-          margin-bottom: 10px;
-          border-top-left-radius: 0;
-          border-top-right-radius: 0;
-        }
-      </style>
-      <main class="form-signin">
+    <section id="login" class="ers-login">
+      <main class="ers-form-signin">
         <form>
           <img class="mb-4" src="login-logo.jpg" alt="" width="72" height="57">
           <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
@@ -163,83 +85,7 @@
     </section>
 
     <!-- ######[HOMEBOARD PAGE]########################################################################## -->
-    <section id="homeboard">
-      <style>
-        html,
-        body {
-          overflow-x: hidden;
-          /* Prevent scroll on narrow devices */
-        }
-
-        body {
-          padding-top: 56px;
-        }
-
-        @media (max-width: 991.98px) {
-          .offcanvas-collapse {
-            position: fixed;
-            top: 56px;
-            /* Height of navbar */
-            bottom: 0;
-            left: 100%;
-            width: 100%;
-            padding-right: 1rem;
-            padding-left: 1rem;
-            overflow-y: auto;
-            visibility: hidden;
-            background-color: #343a40;
-            transition: transform .3s ease-in-out, visibility .3s ease-in-out;
-          }
-
-          .offcanvas-collapse.open {
-            visibility: visible;
-            transform: translateX(-100%);
-          }
-        }
-
-        .nav-scroller {
-          position: relative;
-          z-index: 2;
-          height: 2.75rem;
-          overflow-y: hidden;
-        }
-
-        .nav-scroller .nav {
-          display: flex;
-          flex-wrap: nowrap;
-          padding-bottom: 1rem;
-          margin-top: -1px;
-          overflow-x: auto;
-          color: rgba(255, 255, 255, .75);
-          text-align: center;
-          white-space: nowrap;
-          -webkit-overflow-scrolling: touch;
-        }
-
-        .nav-underline .nav-link {
-          padding-top: .75rem;
-          padding-bottom: .75rem;
-          font-size: .875rem;
-          color: #6c757d;
-        }
-
-        .nav-underline .nav-link:hover {
-          color: #007bff;
-        }
-
-        .nav-underline .active {
-          font-weight: 500;
-          color: #343a40;
-        }
-
-        .text-white-50 {
-          color: rgba(255, 255, 255, .5);
-        }
-
-        .bg-purple {
-          background-color: #6f42c1;
-        }
-      </style>
+    <section id="homeboard" class="ers-dashboard">
       <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Offcanvas navbar</a>
@@ -248,7 +94,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+          <div class="navbar-collapse ers-offcanvas-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link" href="#">Profile</a>
@@ -256,13 +102,21 @@
               <li class="nav-item">
                 <a id="logout" class="nav-link" href="#">Switch account</a>
               </li>
+              <li class="nav-item">
+                <button class="nav-link btn btn-link" id="darkModeToggle" title="Toggle dark mode">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill" viewBox="0 0 16 16">
+                    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+                  </svg>
+                </button>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
 
       <main class="container">
-        <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+        <div class="d-flex align-items-center p-3 my-3 text-white ers-bg-purple rounded shadow-sm">
           <img class="me-3" src="reimbursement.png" alt="" width="48" height="48">
           <div class="lh-1">
             <h1 class="h6 mb-0 text-white lh-1">Reimbursement</h1>
@@ -369,83 +223,7 @@
     </section>
 
     <!-- ######[MANAGERBOARD PAGE]########################################################################## -->
-    <section id="managerboard">
-      <style>
-        html,
-        body {
-          overflow-x: hidden;
-          /* Prevent scroll on narrow devices */
-        }
-
-        body {
-          padding-top: 56px;
-        }
-
-        @media (max-width: 991.98px) {
-          .offcanvas-collapse {
-            position: fixed;
-            top: 56px;
-            /* Height of navbar */
-            bottom: 0;
-            left: 100%;
-            width: 100%;
-            padding-right: 1rem;
-            padding-left: 1rem;
-            overflow-y: auto;
-            visibility: hidden;
-            background-color: #343a40;
-            transition: transform .3s ease-in-out, visibility .3s ease-in-out;
-          }
-
-          .offcanvas-collapse.open {
-            visibility: visible;
-            transform: translateX(-100%);
-          }
-        }
-
-        .nav-scroller {
-          position: relative;
-          z-index: 2;
-          height: 2.75rem;
-          overflow-y: hidden;
-        }
-
-        .nav-scroller .nav {
-          display: flex;
-          flex-wrap: nowrap;
-          padding-bottom: 1rem;
-          margin-top: -1px;
-          overflow-x: auto;
-          color: rgba(255, 255, 255, .75);
-          text-align: center;
-          white-space: nowrap;
-          -webkit-overflow-scrolling: touch;
-        }
-
-        .nav-underline .nav-link {
-          padding-top: .75rem;
-          padding-bottom: .75rem;
-          font-size: .875rem;
-          color: #6c757d;
-        }
-
-        .nav-underline .nav-link:hover {
-          color: #007bff;
-        }
-
-        .nav-underline .active {
-          font-weight: 500;
-          color: #343a40;
-        }
-
-        .text-white-50 {
-          color: rgba(255, 255, 255, .5);
-        }
-
-        .bg-purple {
-          background-color: #6f42c1;
-        }
-      </style>
+    <section id="managerboard" class="ers-dashboard">
       <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Offcanvas navbar</a>
@@ -454,13 +232,21 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+          <div class="navbar-collapse ers-offcanvas-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link" href="#">Profile</a>
               </li>
               <li class="nav-item">
                 <a id="logout" class="nav-link" href="#">Switch account</a>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link btn btn-link" id="darkModeToggle" title="Toggle dark mode">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill" viewBox="0 0 16 16">
+                    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+                  </svg>
+                </button>
               </li>
             </ul>
           </div>
@@ -480,14 +266,14 @@
 
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="reimb" role="tabpanel" aria-labelledby="reimb-tab">
-          <main class="container">
-            <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
-              <img class="me-3" src="reimbursement.png" alt="" width="48" height="48">
-              <div class="lh-1">
-                <h1 class="h6 mb-0 text-white lh-1">Reimbursement</h1>
-                <small>Expenses</small>
-              </div>
-            </div>
+      <main class="container">
+        <div class="d-flex align-items-center p-3 my-3 text-white ers-bg-purple rounded shadow-sm">
+          <img class="me-3" src="reimbursement.png" alt="" width="48" height="48">
+          <div class="lh-1">
+            <h1 class="h6 mb-0 text-white lh-1">Reimbursement</h1>
+            <small>Expenses</small>
+          </div>
+        </div>
 
             <!-- //////////[PENDING]\\\\\\\\\\\ -->
             <div id="pendings" class="my-3 p-3 bg-body rounded shadow-sm">
@@ -546,7 +332,7 @@
         </div>
         <div class="tab-pane fade" id="emp" role="tabpanel" aria-labelledby="emp-tab">
           <main class="container">
-            <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+            <div class="d-flex align-items-center p-3 my-3 text-white ers-bg-purple rounded shadow-sm">
               <img class="me-3" src="employees.png" alt="" width="56" height="48">
               <div class="lh-1">
                 <h1 class="h6 mb-0 text-white lh-1">Employees</h1>
@@ -652,7 +438,7 @@
     <!-- ######[ALL EMPLOYEES PAGE]########################################################################## -->
     <section id="allemployees">
       <main class="container">
-        <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+        <div class="d-flex align-items-center p-3 my-3 text-white ers-bg-purple rounded shadow-sm">
           <img class="me-3" src="reimbursement.png" alt="" width="48" height="48">
           <div class="lh-1">
             <h1 class="h6 mb-0 text-white lh-1">Reimbursement</h1>
@@ -693,7 +479,7 @@
     </section>
 
     <!-- ######[REGISTRATION PAGE]########################################################################## -->
-    <section id="registration" class="bg-light">
+    <section id="registration" class="ers-registration">
       <div class="container">
         <main>
           <div class="py-5 text-center">
@@ -807,418 +593,8 @@
     integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha"
     crossorigin="anonymous"></script>
 
-  <script>
-    window.appStore = {}
-    let currentPage = ''
-    const template = document.getElementById('template')
-
-    // #region HTML sections handlers
-    function PageLayout(layoutName) {
-      const layout = template.content.getElementById(layoutName).cloneNode(true)
-      this.getLayout = () => layout
-
-      this.render = () => {
-        currentPage = layoutName
-        document.body.prepend(layout)
-        if (!history.state || (history.state._id !== this.constructor.name))
-          history.pushState({ _id: this.constructor.name }, 'Landing Page', null)
-      }
-    }
-
-    function Landing() {
-      PageLayout.call(this, 'landing')
-      const landing = this.getLayout()
-      document.title = "Landing Page"
-      validate(landing)
-
-      const btnLogin = landing.querySelector('#btnlogin')
-      btnLogin.addEventListener('click', (event) => {
-        event.preventDefault()
-        new Login().render()
-        landing.remove()
-      })
-
-      const btnSignUp = landing.querySelector('#btnsignup')
-      btnSignUp.addEventListener('click', (event) => {
-        event.preventDefault()
-        new Registration().render()
-        landing.remove()
-      })
-    }
-
-    function Login() {
-      PageLayout.call(this, 'login')
-      const login = this.getLayout()
-      document.title = "Landing Page"
-      validate(login)
-
-      const btnSignIn = login.querySelector('#btnsignin')
-      btnSignIn.addEventListener('click', (event) => {
-        event.preventDefault()
-        let dataForm = new FormData(login.querySelector('form'))
-        let obj = Object.fromEntries(dataForm.entries());
-
-        sendPost('/ers/api/login', obj)
-          .then(data => {
-            if (!data) {
-              login.querySelector('.alert').classList.replace('d-none', 'd-block')
-              return
-            }
-            appStore.user = data
-            if (data.roleType === 'MANAGER') {
-              new ManagerBoard().render()
-            } else {
-              new Homeboard().render()
-            }
-            login.remove()
-          });
-
-      })
-    }
-
-    function Homeboard() {
-      PageLayout.call(this, 'homeboard')
-      const homeboard = this.getLayout()
-      document.title = "Home Page"
-      let user = appStore.user
-      populate()
-
-      homeboard.querySelector('.navbar-brand').innerHTML = user.firstName + '`s Dashboard'
-
-      let myModal = homeboard.querySelector('#myModal')
-      let select = myModal.querySelector('select')
-      let txtAmount = myModal.querySelector('#amount')
-      let textArea = myModal.querySelector('textarea')
-
-      myModal.querySelector('#btnsave').addEventListener('click', function (event) {
-        event.preventDefault();
-        myModal.querySelector('#nan').classList.replace('d-block', 'd-none')
-        myModal.querySelector('#error').classList.replace('d-block', 'd-none')
-        let amount = Number.parseFloat(txtAmount.value)
-        if (!amount) {
-          myModal.querySelector('#nan').classList.replace('d-none', 'd-block')
-          return;
-        }
-        let obj = {
-          "id": 0,
-          "amount": amount,
-          "submitted": Date.now(),
-          "resolved": null,
-          "description": textArea.value,
-          "receipt": 0,
-          "sign": "",
-          "resolverID": null,
-          "statusID": 1,
-          "authorID": user.id,
-          "typeID": select.selectedIndex
-        }
-        sendPost('/ers/api/save', obj)
-          .then(data => {
-            console.log(data)
-            populate()
-            myModal.querySelector('form').reset()
-            myModal.querySelector('#btnclose').click()
-          }).catch(e => {
-            console.log(e)
-            myModal.querySelector('#error').classList.replace('d-none', 'd-block')
-          })
-      })
-
-      fetch('/ers/api/types')
-        .then(response => response.json())
-        .then(data => {
-          data.map((itm) => {
-            let clone = select.querySelector('option').cloneNode(true)
-            clone.selected = false
-            clone.text = itm.name
-            select.options.add(clone, itm.id)
-          })
-        })
-
-      homeboard.querySelector('#logout').addEventListener('click', function (event) {
-        event.preventDefault();
-        fetch('/ers/api/logout')
-          .then(response => response.json())
-          .then(data => {
-            console.log(data)
-            appStore.user = {};
-            new Login().render()
-            homeboard.remove()
-          })
-      })
-
-      homeboard.querySelector('#navbarSideCollapse').addEventListener('click', function () {
-        homeboard.querySelector('.offcanvas-collapse').classList.toggle('open')
-      })
-      let divPending = homeboard.querySelector('#pending')
-      let divExpenses = divPending.querySelector('#expenses')
-      let divItem = divExpenses.querySelector('.item')
-
-      let divResolved = homeboard.querySelector('#resolved')
-      let divExpensesR = divResolved.querySelector('#expenses-r')
-      let divItemR = divExpensesR.querySelector('.item-r')
-      function populate() {
-        fetch('/ers/api/home?userid=' + user.id)
-          .then(response => response.json())
-          .then(data => {
-            if (!data) {
-              divExpenses.innerHTML = '<p>Nothing to show</p>'
-              return
-            }
-            console.log(data)
-            divExpenses.innerHTML = ''
-            data.filter(item => item.resolved === null).map(itm => {
-              let clone = divItem.cloneNode(true)
-              clone.addEventListener('click', itemHandler)
-              clone.querySelector('strong').innerHTML = itm.type
-              clone.querySelector('p').innerHTML += itm.description
-              clone.querySelector('#date').innerHTML = new Date(itm.submitted).toDateString()
-              divExpenses.append(clone)
-            })
-            divExpensesR.innerHTML = ''
-            data.filter(item => item.resolved !== null).map(itm => {
-              let clone = divItemR.cloneNode(true)
-              let color = itm.status === 'DENIED' ? 'red' : 'green'
-              clone.querySelector('rect').setAttribute('fill', color)
-              // clone.addEventListener('click', itemHandler)
-              clone.querySelector('strong').innerHTML = itm.type
-              clone.querySelector('#user').innerHTML = itm.author
-              clone.querySelector('p').innerHTML = itm.description
-              clone.querySelector('#r-date').innerHTML = new Date(itm.resolved).toDateString()
-              clone.querySelector('#resolver').innerHTML = itm.resolver
-              divExpensesR.append(clone)
-            })
-          })
-      }
-
-      function itemHandler(event) {
-        event.preventDefault()
-      }
-
-    }
-
-    function ManagerBoard() {
-      PageLayout.call(this, 'managerboard')
-      const managerboard = this.getLayout()
-      document.title = "Manager Page"
-      let user = appStore.user
-      populate()
-
-      managerboard.querySelector('.navbar-brand').innerHTML = user.firstName + '`s Dashboard'
-
-      managerboard.querySelector('#logout').addEventListener('click', function (event) {
-        event.preventDefault();
-        fetch('/ers/api/logout')
-          .then(response => response.json())
-          .then(data => {
-            console.log(data)
-            appStore.user = {};
-            new Login().render()
-            managerboard.remove()
-          })
-      })
-
-      managerboard.querySelector('#navbarSideCollapse').addEventListener('click', function () {
-        managerboard.querySelector('.offcanvas-collapse').classList.toggle('open')
-      })
-
-      let divPendings = managerboard.querySelector('#pendings')
-      let divExpensesP = divPendings.querySelector('#expenses-p')
-      let divItemP = divExpensesP.querySelector('.item-p')
-
-      let divResolved = managerboard.querySelector('#resolved')
-      let divExpensesR = divResolved.querySelector('#expenses-r')
-      let divItemR = divExpensesR.querySelector('.item-r')
-
-      function populate() {
-        fetch('/ers/api/manager')
-          .then(response => response.json())
-          .then(data => {
-            if (!data) {
-              divExpenses.innerHTML = '<p>Nothing to show</p>'
-              return
-            }
-            console.log(data)
-            divExpensesP.innerHTML = ''
-            data.filter(item => item.resolved === null).map(itm => {
-              let clone = divItemP.cloneNode(true)
-              clone.setAttribute('id', itm.id)
-              clone.addEventListener('click', itemHandler)
-              clone.querySelector('strong').innerHTML = itm.type
-              clone.querySelector('p').innerHTML += itm.description
-              clone.querySelector('#s-date').innerHTML = new Date(itm.submitted).toDateString()
-              clone.querySelector('#author').innerHTML = itm.author
-              divExpensesP.append(clone)
-            })
-            divExpensesR.innerHTML = ''
-            data.filter(item => item.resolved !== null).map(itm => {
-              let clone = divItemR.cloneNode(true)
-              let color = itm.status === 'DENIED' ? 'red' : 'green'
-              clone.querySelector('rect').setAttribute('fill', color)
-              // clone.addEventListener('click', itemHandler)
-              clone.querySelector('strong').innerHTML = itm.type
-              clone.querySelector('#user').innerHTML = itm.author
-              clone.querySelector('p').innerHTML = itm.description
-              clone.querySelector('#r-date').innerHTML = new Date(itm.resolved).toDateString()
-              clone.querySelector('#resolver').innerHTML = itm.resolver
-              divExpensesR.append(clone)
-            })
-          })
-      }
-
-      let divEmployees = managerboard.querySelector('#employees')
-      let divList = divEmployees.querySelector('#list')
-      let divItemE = divList.querySelector('.item-e')
-
-      function employees() {
-        fetch('/ers/api/employees')
-          .then(response => response.json())
-          .then(data => {
-            console.log(data)
-            divList.innerHTML = ''
-            data.map(itm => {
-              let name = itm.firstName + ' ' + itm.lastName
-              let clone = divItemE.cloneNode(true)
-              clone.setAttribute('id', itm.id)
-              clone.setAttribute('data-name', name)
-              clone.addEventListener('click', oneHandler)
-              clone.querySelector('strong').innerHTML = name
-              clone.querySelector('p').innerHTML += itm.roleType
-              divList.append(clone)
-            })
-          })
-      }
-      employees()
-      let empExpenses = managerboard.querySelector('#emp-expenses')
-      let list = empExpenses.querySelector('#list-expenses')
-      empExpenses.querySelector('#btnclose').addEventListener('click', function(event) {
-        event.preventDefault()        
-        empExpenses.classList.replace('d-block', 'd-none')
-      })
-      function oneHandler(event) {
-        event.preventDefault()
-        let name = event.currentTarget.getAttribute('data-name')
-        let item = list.querySelector('.item-expenses')
-        fetch('/ers/api/ticketbyname?field=author&name=' + name)
-          .then(response => response.json())
-          .then(data => {
-              console.log(data)
-              // list.innerHTML = ''
-              if(data) {
-                data.map(itm => {
-              let clone = item.cloneNode(true)              
-              clone.querySelector('strong').innerHTML = itm.type
-              clone.querySelector('p').innerHTML += itm.description
-              clone.querySelector('#s-date').innerHTML = new Date(itm.submitted).toDateString()
-              clone.querySelector('#author').innerHTML = itm.resolver
-              list.append(clone)
-            })
-              }
-
-            empExpenses.classList.replace('d-none', 'd-block')
-          })
-      }
-
-      let itmModal = managerboard.querySelector('#itmModal')
-      itmModal.querySelector('#btnsave').addEventListener('click', function (event) {
-        let radioValue = itmModal.querySelector('input[name="inlineRadioOptions"]:checked').value
-        let obj = {
-          id: itmModal.getAttribute('data-item-id'),
-          resolved: Date.now(),
-          resolver: appStore.user.id,
-          status: radioValue
-        }
-        sendPost('/ers/api/update', obj).then(data => {
-          console.log(data)
-          itmModal.querySelector('#btnclose').click()
-          populate()
-        })
-      })
-
-      async function itemHandler(event) {
-        event.preventDefault()
-        event.stopPropagation()
-        console.log(event.currentTarget.id)
-        let res = await fetch('/ers/api/ticket?field=reimb_id&id=' + event.currentTarget.id)
-        let data = await res.json()
-        itmModal.querySelector('#s-date').innerHTML = new Date(data[0].submitted).toDateString()
-        itmModal.querySelector('.card-title').innerHTML = data[0].type
-        itmModal.querySelector('.card-subtitle').innerHTML = 'by ' + data[0].author
-        itmModal.querySelector('.card-text').innerHTML = data[0].description
-        itmModal.querySelector('#s-amount').innerHTML = data[0].amount
-        itmModal.setAttribute('data-item-id', data[0].id);
-        new bootstrap.Modal(itmModal).show()
-      }
-    }
-
-    function Registration() {
-      PageLayout.call(this, 'registration')
-      const registration = this.getLayout()
-      document.title = "Registration Page"
-
-      const btnRegister = registration.querySelector('#btnregister')
-      btnRegister.addEventListener('click', function (event) {
-        event.preventDefault()
-        validate(registration)
-        let form = registration.querySelector('form')
-        if (!form.checkValidity()) return
-        const data = new FormData(form)
-        const obj = Object.fromEntries(data.entries())
-        console.log(obj)
-        sendPost('/ers/api/register', obj)
-          .then(data => {
-            if (!data) return
-            console.log(data)
-            new Login().render()
-            registration.remove()
-          })
-      })
-    }
-
-    addEventListener('load', (event) => {
-      new Landing().render()
-    })
-
-    addEventListener('popstate', (event) => {
-      if (event.state === null) {
-        console.log('This event has not been handle, event state is ', event.state)
-        return
-      }
-      console.log(event.state, currentPage)
-      document.body.children[currentPage].remove()
-      const newPage = new window[event.state._id]()
-      newPage.render()
-    })
-
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    function validate(page) {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = page.querySelectorAll('.needs-validation')
-      // Loop over them and prevent submission
-      Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-          form.addEventListener('click', function (event) {
-            if (!form.checkValidity()) {
-              event.preventDefault()
-              event.stopPropagation()
-            }
-            form.classList.add('was-validated')
-          }, false)
-        })
-    }
-
-    async function sendPost(url, data) {
-      let res = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data)
-      })
-      let jsonData = await res.json()
-      return jsonData
-    }
-  </script>
+<script src="router.js"></script>
+<script type="module" src="app.js"></script>
 </body>
 
 </html>
